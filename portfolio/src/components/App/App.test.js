@@ -8,4 +8,6 @@ test("renders learn react link", () => {
 	expect(linkElement).toBeInTheDocument();
 });
 
-test.only(expect(0).toBe(0));
+test.only("test basic", () => {
+	expect(0).toBe(0);
+});
