@@ -1,0 +1,23 @@
+.Navbar {
+	height: 80px;
+	background-color: var(--white);
+	padding: 10px;
+	display: inline-grid;
+	grid-template-columns: 2;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#navbar-logo {
+	max-height: 80px;
+}
+
+#nav-list {
+	display: inline;
+}
+
+#nav-list li {
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+}
