@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "../Navbar";
+import FolioList from "../FolioList";
 
 function App() {
 	return (
@@ -16,17 +17,13 @@ function App() {
 				<p>
 					Portfolios you can <em>actually</em> create.
 				</p>
+				<FolioList />
 			</main>
 		</div>
 	);
 }
 
 export default App;
-
-
-
-
-
 
 /* PLAN:
 - Structure of portfolio webpage: 
@@ -42,4 +39,4 @@ Main - Components:
 Footer - Footer component
 Button component 
 (Stretch goal components: Favourites section, User log in and log in upload)
-- Create test file for all components
+- Create test file for all components*/
