@@ -1,25 +1,27 @@
 import "./App.css";
 import Navbar from "../Navbar";
+import Header from "../Header";
+import Footer from "../Footer";
 import FolioList from "../FolioList";
+
 
 function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			<header className="App-header">
-				<img
-					src="/logos/portfol-logo-horiz-M.png"
-					className="App-logo"
-					alt="logo"
-				/>
-			</header>
+			<Header />
 			<main>
 				<p>
-					Portfolios you can <em>actually</em> create.
+				
 				</p>
 				<FolioList />
 			</main>
+
+	
+			<Footer />
+
 		</div>
+		
 	);
 }
 
@@ -38,5 +40,12 @@ Main - Components:
 6. Upload component
 Footer - Footer component
 Button component 
+
+(Stretch goal components: Favourites section, User log in and log in upload) 
+Create test file for all components
+
+
 (Stretch goal components: Favourites section, User log in and log in upload)
 - Create test file for all components*/
+
+*/
