@@ -8,15 +8,15 @@
 	align-items: center;
 }
 
-#navbar-logo {
+.navbar-logo {
 	max-height: 80px;
 }
 
-#nav-list {
+.nav-list {
 	display: inline;
 }
 
-#nav-list li {
+.nav-list li {
 	display: inline;
 	margin-left: 10px;
 	margin-right: 10px;
