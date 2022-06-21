@@ -1,18 +1,18 @@
 import "./folio.css";
 
-export default function Folio() {
+export default function Folio({ folio }) {
 	return (
 		<article className="folio">
 			<img
 				className="folio-img"
-				src="\logos\portfol-logo-p-red-L.png"
-				alt="frontpage of portfolio"
+				src={folio.img}
+				alt={`Portfolio by ${folio.creator}`}
 			/>
 			<div className="like-div">❤️</div>
 			<div className="folio-desc">
-				<p>Creator Name</p>
+				<p>{folio.creator}</p>
 				<p>
-					<a href="#">Link to site</a>
+					<a href={folio.link}>Link to site</a>
 				</p>
 			</div>
 		</article>

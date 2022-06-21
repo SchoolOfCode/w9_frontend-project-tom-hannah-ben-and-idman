@@ -2,6 +2,7 @@
 	border: 1px dotted hotpink;
 	padding: 5px;
 	display: grid;
+	grid-template-columns: 33.3% 33.3% auto;
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 5px;

@@ -1,6 +1,6 @@
 :root {
-	--f-size: 200px;
-	--i-size: 100px;
+	--f-size: 280px;
+	--i-size: 200px;
 }
 
 .folio {
@@ -14,9 +14,12 @@
 	border-radius: calc(var(--f-size) / 4);
 }
 
+/* TODO??? possibly set as background img so that can make it expand to fill the available space rather than force to shrink (or how to make img cover the space?) */
+
 .folio-img {
 	max-width: var(--i-size);
 	border-radius: 20px;
+	border: 1px dashed blue;
 }
 
 .folio-desc p {
@@ -25,7 +28,8 @@
 
 .folio-desc p:first-child {
 	margin: 0 auto;
-	background-color: green;
+	/* background-color: green; */
+	margin-top: -40px;
 }
 
 .like-div {
@@ -33,9 +37,9 @@
 	text-align: center;
 	position: relative;
 	left: calc(var(--i-size) / 2 - 10px);
-	bottom: calc(var(--i-size) / 3);
+	bottom: calc(var(--i-size) / 3 - 20px);
 	font-size: 1.5em;
 	line-height: 0.2em;
 	height: 10px;
-	background-color: yellow;
+	/* background-color: yellow; */
 }
