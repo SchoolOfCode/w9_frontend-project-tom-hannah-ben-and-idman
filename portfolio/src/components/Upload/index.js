@@ -34,10 +34,37 @@ function Upload() {
     }
     postData();
     return (
-        <form>
+       
+<div className= "Upload form">
 
-            
-        </form>
+
+<h2>Upload your porrtfolio here</h2>
+
+<form action="/action_page.php">
+  <label for="fname">Creators name:</label><br/>
+  <input type="text" id="fname" name="fname" value=""/><br/>
+  <label for="lname">Description:</label><br/>
+  <input type="text" id="lname" name="lname" value=""/><br/><br/>
+  <label for="lname">Keyword:</label><br/>
+  <input type="text" id="lname" name="lname" value=""/><br/><br/>
+  <label for="lname">Website URL:</label><br/>
+  <input type="text" id="lname" name="lname" value=""/><br/><br/>
+
+
+  <p>Please select the level of your project</p>
+  <input type="radio" id="Beginners projec" name="project_level" value="Beginners projec"/>
+  <label for="html">Beginners project</label><br/>
+  <input type="radio" id="Mid-career project" name="project_level" value="Mid-career project"/>
+  <label for="css">Mid-career project</label><br/>
+  <input type="radio" id="Experienced project" name="project_level" value="Experienced project"/>
+  <label for="Experienced project">Experienced project</label><br/><br/>
+
+
+  <input type="submit" value="Submit"/>
+</form> 
+</div>
+
+
     )
 
 }
