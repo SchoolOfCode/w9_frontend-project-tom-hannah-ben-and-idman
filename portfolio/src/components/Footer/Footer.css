@@ -1,10 +1,57 @@
 
-    .footer{
-        margin-top: 1rem;
-        padding: 1rem;
-        background-color: rgb(235, 195, 64);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%; 
-}
+    
+    .footer {
+   
+     background:white; 
+     width: 95%; 
+     color:black; 
+     margin: 0%; 
+     padding: 0%;
+     display: inline-block;
+     text-align: center;
+     
+           
+    } 
+    .fa {
+        padding: 30px;
+        font-size: 10px;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px;
+        border-radius: 100%;
+        
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+
+
+      .fa-instagram {
+        background: #125688;
+        color: white;
+      }
+
+      
+      .fa-pinterest {
+        background: #cb2027;
+        color: white;
+      }
+
+
+      .Brand-logo {
+        text-align: left;
+
+    }
+
+      .Text {
+          text-align: left;
+
+      }
