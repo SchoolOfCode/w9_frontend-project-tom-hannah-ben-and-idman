@@ -7,14 +7,29 @@
 	width: var(--f-size);
 	height: var(--f-size);
 	border: 1px solid black;
+	/* display: grid;
+	justify-content: center;
+	align-items: center; */
+	padding: 5px;
+	border-radius: calc(var(--f-size) / 4);
+	margin-bottom: 40px;
+}
+
+.folio-content {
+	width: 100%;
+	height: 100%;
+	border: 1px solid yellow;
 	display: grid;
 	justify-content: center;
 	align-items: center;
-	padding: 5px;
-	border-radius: calc(var(--f-size) / 4);
 }
 
 /* TODO??? possibly set as background img so that can make it expand to fill the available space rather than force to shrink (or how to make img cover the space?) */
+
+.folio-img-container {
+	width: 100%;
+	border: 1px solid green;
+}
 
 .folio-img {
 	max-width: var(--i-size);
@@ -23,7 +38,7 @@
 }
 
 .folio-desc p {
-	margin: 0.3em auto;
+	margin: 0.1em auto;
 }
 
 .folio-desc p:first-child {
@@ -37,7 +52,7 @@
 	text-align: center;
 	position: relative;
 	left: calc(var(--i-size) / 2 - 10px);
-	bottom: calc(var(--i-size) / 3 - 20px);
+	bottom: calc(var(--i-size) / 3 - 40px);
 	font-size: 1.5em;
 	line-height: 0.2em;
 	height: 10px;

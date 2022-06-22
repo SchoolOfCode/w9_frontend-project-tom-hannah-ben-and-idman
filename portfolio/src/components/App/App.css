@@ -13,6 +13,7 @@
 .App {
 	text-align: left;
 	min-height: 100vh;
+	font-family: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
 }
 
 .App-logo {

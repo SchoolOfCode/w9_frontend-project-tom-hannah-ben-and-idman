@@ -23,13 +23,29 @@ export default function FolioList() {
 			img: "/logos/portfol-logo-p-red-L.png",
 			link: "#",
 		},
+		{
+			id: 4,
+			creator: "Edna English",
+			img: "/logos/portfol-logo-p-red-L.png",
+			link: "#",
+		},
+		{
+			id: 5,
+			creator: "Petra Peters",
+			img: "/logos/portfol-logo-p-red-L.png",
+			link: "#",
+		},
+		{
+			id: 6,
+			creator: "Anna Achetype",
+			img: "/logos/portfol-logo-p-red-L.png",
+			link: "#",
+		},
 	];
 	const [folios, setFolios] = useState(initialise);
 
 	return (
 		<section className="FolioList">
-			{/* <Folio /> */}
-
 			{folios.map((f) => {
 				return <Folio key={f.id} folio={f} />;
 			})}
