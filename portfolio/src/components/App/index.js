@@ -47,5 +47,3 @@ Create test file for all components
 
 (Stretch goal components: Favourites section, User log in and log in upload)
 - Create test file for all components*/
-
-*/
