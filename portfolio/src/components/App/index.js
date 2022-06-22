@@ -1,17 +1,37 @@
+import {useEffect, useState} from "react";
 import "./App.css";
 import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
 
+
 function App() {
+	const [portfolio, setPortfolio] = useState({})
+
+		useEffect(() => {
+			async function getData() {
+			  let res = await fetch("http://localhost:3001/portfolio");
+			  let data = await res.json();
+			  console.log(data);
+			  setPortfolio(data);
+			 
+			}
+			getData();
+		  }, []);
+		
+	
+
+
+
+
 	return (
 		<div className="App">
 			<Navbar />
 			<Header />
 			<main>
 				<p></p>
-				<FolioList />
+				<FolioList portfolio = {portfolio} />
 			</main>
 
 			<Footer />
