@@ -20,7 +20,13 @@ export default function Folio({ folio }) {
 				<div className="folio-desc">
 					<p>{folio.designers_name}</p>
 					<p>
-						<a href={folio.site_url}>Link to site</a>
+						<a
+							href={folio.site_url}
+							target="_blank"
+							rel="noreferrer"
+						>
+							Link to site
+						</a>
 					</p>
 				</div>
 			</div>

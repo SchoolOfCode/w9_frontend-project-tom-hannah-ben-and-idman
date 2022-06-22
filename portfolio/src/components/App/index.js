@@ -1,37 +1,51 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
-
+import Search from "../Search";
 
 function App() {
-	const [portfolio, setPortfolio] = useState([])
+	const [portfolio, setPortfolio] = useState([]);
 
-		useEffect(() => {
-			async function getData() {
-			  let res = await fetch("http://localhost:3001/portfolio");
-			  let data = await res.json();
-			  console.log(data);
-			  setPortfolio(data.payload);
-			   
+	useEffect(() => {
+		async function getData() {
+			let res = await fetch("http://localhost:3001/portfolio");
+			let data = await res.json();
+			console.log(data);
+			setPortfolio(data.payload);
+		}
+		getData();
+	}, []);
+
+	function searchByKeyword(e) {
+		e.preventDefault();
+		const input = e.target.searchInput.value;
+		e.target.reset();
+
+		let searchedPortfolios = [];
+
+		for (let i = 0; i < portfolio.length; i++) {
+			const keywords = portfolio[i].keywords;
+			const result = keywords.includes(input);
+
+			if (result) {
+				searchedPortfolios = [...searchedPortfolios, portfolio[i]];
 			}
-			getData();
-		  }, []);
-		
-	
-
-
-
+		}
+		console.log(searchedPortfolios);
+		setPortfolio(searchedPortfolios);
+	}
 
 	return (
 		<div className="App">
 			<Navbar />
 			<Header />
+			<Search onSubmit={searchByKeyword} type="keyword" />
 			<main>
 				<p></p>
-				<FolioList portfolio = {portfolio} />
+				<FolioList portfolio={portfolio} />
 			</main>
 
 			<Footer />
