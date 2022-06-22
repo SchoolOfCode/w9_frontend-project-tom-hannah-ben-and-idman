@@ -2,9 +2,9 @@ import "./folio.css";
 
 export default function Folio({ folio }) {
 	const bkImg = {
-		backgroundImage: `url(${folio.img})`,
+		backgroundImage: `url(${folio.site_image})`,
 	};
-	const imgAlt = `Folio by ${folio.creator}`;
+	const imgAlt = `Folio by ${folio.designers_name}`;
 
 	return (
 		<article className="folio">
@@ -13,14 +13,14 @@ export default function Folio({ folio }) {
 					{/* <img
 						className="folio-img"
 						src=""
-						alt={`Portfolio by ${folio.creator}`}
+						alt={`Portfolio by ${folio.designers_name}`}
 					/> */}
 				</div>
 				<div className="like-div">❤️</div>
 				<div className="folio-desc">
-					<p>{folio.creator}</p>
+					<p>{folio.designers_name}</p>
 					<p>
-						<a href={folio.link}>Link to site</a>
+						<a href={folio.site_url}>Link to site</a>
 					</p>
 				</div>
 			</div>
