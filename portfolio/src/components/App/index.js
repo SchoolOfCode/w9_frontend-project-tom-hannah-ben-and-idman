@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
+import Upload from "../Upload";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
 				<p></p>
 				<FolioList portfolio = {portfolio} />
 			</main>
+			<Upload/>
 
 			<Footer />
 		</div>
