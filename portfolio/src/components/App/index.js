@@ -33,6 +33,17 @@ function App() {
     setResetClass("reset-button show");
   }
 
+  async function searchByDesigner(e) {
+    e.preventDefault();
+    const input = e.target.searchInput.value;
+    e.target.reset();
+
+    let res = await fetch(`http://localhost:3001/portfolio/?designer=${input}`);
+    let data = await res.json();
+    setPortfolio(data.payload);
+    setResetClass("reset-button show");
+  }
+
   function onClick(e) {
     e.preventDefault();
     setResetClass("reset-button");
@@ -46,6 +57,12 @@ function App() {
       <Search
         onSubmit={searchByKeyword}
         type="keyword"
+        resetClass={resetClass}
+        onClick={onClick}
+      />
+      <Search
+        onSubmit={searchByDesigner}
+        type="Designer's Name"
         resetClass={resetClass}
         onClick={onClick}
       />
