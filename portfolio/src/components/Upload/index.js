@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 /* 
 Plan:
@@ -24,9 +23,6 @@ const NewPort = {
 
 }
 function Upload() {
-    
-
-useEffect(() => {
     async function postData() {
         const db_url = "http://localhost:3001/portfolio";
         const newPost = { method: 'POST',
@@ -37,21 +33,14 @@ useEffect(() => {
          console.log(data)
     }
     postData();
-  },[]);
+    return (
+        <form>
+
+            
+        </form>
+    )
+
 }
 
-
-
-// async function Upload(NewPort){
-//  const db_url = "http://localhost:3001/portfolio";
-//    const newPost = { method: 'POST',
-//     headers: {'Content-Type': 'application/json'},
-//     body: JSON.stringify(NewPort)}
-//     const res = await fetch(db_url, newPost)
-//     const data = await res.json()
-//     console.log(data)
-
-// }
-// Upload(NewPort)
 export default Upload;
 
