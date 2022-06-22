@@ -4,25 +4,19 @@ import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
 
-
 function App() {
-	return (
-		<div className="App">
-			<Navbar />
-			<Header />
-			<main>
-				<p>
-				
-				</p>
-				<FolioList />
-			</main>
+  return (
+    <div className="App">
+      <Navbar />
+      <Header />
+      <main>
+        <p></p>
+        <FolioList />
+      </main>
 
-	
-			<Footer />
-
-		</div>
-		
-	);
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
