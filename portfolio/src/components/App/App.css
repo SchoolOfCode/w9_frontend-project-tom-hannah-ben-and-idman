@@ -34,3 +34,12 @@
 	font-size: calc(10px + 2vmin);
 	color: white;
 }
+
+a {
+	color: var(--red);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--greyblue);
+}
