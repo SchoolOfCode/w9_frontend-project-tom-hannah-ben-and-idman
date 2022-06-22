@@ -22,7 +22,7 @@ export default function Footer(){
 					/>
          </div>
          <div className= "Text">
-           <p>Portfol.io  is the world’s leading community for creatives to share, grow, and get hired.</p>
+           <p>Portfol.io is the world’s leading community for creatives to share, grow, and get hired.</p>
          </div>
         
    </div> 
