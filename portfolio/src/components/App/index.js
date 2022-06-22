@@ -7,15 +7,15 @@ import FolioList from "../FolioList";
 
 
 function App() {
-	const [portfolio, setPortfolio] = useState({})
+	const [portfolio, setPortfolio] = useState([])
 
 		useEffect(() => {
 			async function getData() {
 			  let res = await fetch("http://localhost:3001/portfolio");
 			  let data = await res.json();
 			  console.log(data);
-			  setPortfolio(data);
-			 
+			  setPortfolio(data.payload);
+			   
 			}
 			getData();
 		  }, []);

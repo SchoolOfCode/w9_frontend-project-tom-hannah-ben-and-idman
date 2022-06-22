@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Folio from "../Folio";
 
-export default function FolioList(portfolio) {
+export default function FolioList({portfolio}) {
 	// const initialise = [
 	// 	{
 	// 		id: 1,
@@ -25,7 +25,7 @@ export default function FolioList(portfolio) {
 	// 	},
 	// ];
 	// const [folios, setFolios] = useState(initialise);
-
+ if (typeof portfolio !== "undefined"){
 	return (
 		<section className="FolioList">
 			{/* <Folio /> */}
@@ -35,4 +35,9 @@ export default function FolioList(portfolio) {
 			})}
 		</section>
 	);
+		} else {
+			return (
+				<div> not working</div>
+			)
+		}
 }
