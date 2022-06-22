@@ -12,8 +12,8 @@ export default function Footer(){
          <h1> Follow us</h1>
          <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-facebook"></a>
          <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-twitter"></a>
-         <a href="#" class="fa fa-instagram"></a>
-         <a href="#" class="fa fa-pinterest"></a>    
+         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-instagram"></a>
+         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-pinterest"></a>    
          <div className= "Brand-logo">
          <img
 						className="navbar-logo"
