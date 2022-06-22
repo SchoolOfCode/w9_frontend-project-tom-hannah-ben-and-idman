@@ -7,50 +7,56 @@ import FolioList from "../FolioList";
 import Search from "../Search";
 
 function App() {
-	const [portfolio, setPortfolio] = useState([]);
+  const [portfolio, setPortfolio] = useState([]);
 
-	useEffect(() => {
-		async function getData() {
-			let res = await fetch("http://localhost:3001/portfolio");
-			let data = await res.json();
-			console.log(data);
-			setPortfolio(data.payload);
-		}
-		getData();
-	}, []);
+  async function getData() {
+    let res = await fetch("http://localhost:3001/portfolio");
+    let data = await res.json();
+    console.log(data);
+    setPortfolio(data.payload);
+  }
 
-	function searchByKeyword(e) {
-		e.preventDefault();
-		const input = e.target.searchInput.value;
-		e.target.reset();
+  useEffect(() => {
+    getData();
+  }, []);
 
-		let searchedPortfolios = [];
+  const [resetClass, setResetClass] = useState("reset-button");
 
-		for (let i = 0; i < portfolio.length; i++) {
-			const keywords = portfolio[i].keywords;
-			const result = keywords.includes(input);
+  async function searchByKeyword(e) {
+    e.preventDefault();
+    const input = e.target.searchInput.value;
+    e.target.reset();
 
-			if (result) {
-				searchedPortfolios = [...searchedPortfolios, portfolio[i]];
-			}
-		}
-		console.log(searchedPortfolios);
-		setPortfolio(searchedPortfolios);
-	}
+    let res = await fetch(`http://localhost:3001/portfolio/?keyword=${input}`);
+    let data = await res.json();
+    setPortfolio(data.payload);
+    setResetClass("reset-button show");
+  }
 
-	return (
-		<div className="App">
-			<Navbar />
-			<Header />
-			<Search onSubmit={searchByKeyword} type="keyword" />
-			<main>
-				<p></p>
-				<FolioList portfolio={portfolio} />
-			</main>
+  function onClick(e) {
+    e.preventDefault();
+    setResetClass("reset-button");
+    getData();
+  }
 
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Navbar />
+      <Header />
+      <Search
+        onSubmit={searchByKeyword}
+        type="keyword"
+        resetClass={resetClass}
+        onClick={onClick}
+      />
+      <main>
+        <p></p>
+        <FolioList portfolio={portfolio} />
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
