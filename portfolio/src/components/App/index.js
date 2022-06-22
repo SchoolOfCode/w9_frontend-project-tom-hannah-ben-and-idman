@@ -44,7 +44,7 @@ function App() {
     setResetClass("reset-button show");
   }
 
-  function onClick(e) {
+  function resetSearch(e) {
     e.preventDefault();
     setResetClass("reset-button");
     getData();
@@ -54,18 +54,13 @@ function App() {
     <div className="App">
       <Navbar />
       <Header />
-      <Search
-        onSubmit={searchByKeyword}
-        type="keyword"
-        resetClass={resetClass}
-        onClick={onClick}
-      />
-      <Search
-        onSubmit={searchByDesigner}
-        type="Designer's Name"
-        resetClass={resetClass}
-        onClick={onClick}
-      />
+      <div className="search-section">
+        <Search onSubmit={searchByKeyword} type="keyword" />
+        <button className={resetClass} onClick={resetSearch}>
+          Press to remove filter
+        </button>
+        <Search onSubmit={searchByDesigner} type="Designer's Name" />
+      </div>
       <main>
         <p></p>
         <FolioList portfolio={portfolio} />

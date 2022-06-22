@@ -17,7 +17,7 @@
 //if search done button appears to reset
 import "./search.css";
 
-export default function Search({ onSubmit, type, resetClass, onClick }) {
+export default function Search({ onSubmit, type }) {
   return (
     <div>
       <form className="search-form" onSubmit={onSubmit}>
@@ -26,9 +26,6 @@ export default function Search({ onSubmit, type, resetClass, onClick }) {
         </label>
         <button type="submit">Go</button>
       </form>
-      <button className={resetClass} onClick={onClick}>
-        Press to remove filter
-      </button>
     </div>
   );
 }

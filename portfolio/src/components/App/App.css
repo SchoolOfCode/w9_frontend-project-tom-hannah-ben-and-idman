@@ -3,43 +3,57 @@
 /* https://coolors.co/011627-78cad2-f3f7f6-5497a7-e5625e */
 
 :root {
-	--blue: #78cad2;
-	--greyblue: #5497a7;
-	--red: #e5625e;
-	--white: #f3f7f6;
-	--black: #011627;
+  --blue: #78cad2;
+  --greyblue: #5497a7;
+  --red: #e5625e;
+  --white: #f3f7f6;
+  --black: #011627;
 }
 
 .App {
-	text-align: left;
-	min-height: 100vh;
-	font-family: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
+  text-align: left;
+  min-height: 100vh;
+  font-family: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
 }
 
 .App-logo {
-	height: auto;
-	width: 40%;
-	max-width: 620px;
-	margin-left: 20px;
-	pointer-events: none;
+  height: auto;
+  width: 40%;
+  max-width: 620px;
+  margin-left: 20px;
+  pointer-events: none;
 }
 
 .App-header {
-	background-color: var(--blue);
-	height: 180px;
-	display: flex;
-	flex-direction: column;
-	align-items: left;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+  background-color: var(--blue);
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 a {
-	color: var(--red);
-	text-decoration: none;
+  color: var(--red);
+  text-decoration: none;
 }
 
 a:hover {
-	color: var(--greyblue);
+  color: var(--greyblue);
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* below is used to toggle reset filter button*/
+.reset-button {
+  display: none;
+}
+
+.reset-button.show {
+  display: inline;
 }

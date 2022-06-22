@@ -1,11 +1,3 @@
-.reset-button {
-  display: none;
-}
-
-.reset-button.show {
-  display: inline;
-}
-
 .search-form {
   display: inline;
 }
