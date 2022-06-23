@@ -2,56 +2,42 @@
     .footer {
    
      background:white; 
-     width: 95%; 
+     width: 100vw; 
+     height: auto;
      color:black; 
-     margin: 0%; 
-     padding: 0%;
+     padding-top: 250px;
      display: inline-block;
      text-align: center;
-     
+     font-size: 0.5em;
+
+
            
     } 
     
-    .fa {
-        padding: 30px;
-        font-size: 10px;
-        width: 100px;
-        text-align: center;
-        text-decoration: none;
-        margin: 10px;
-        border-radius: 100%;
-        
-      }
-
-      .fa-facebook {
-        background: #3B5998;
-        color: white;
-      }
-
-      .fa-twitter {
-        background: #55ACEE;
-        color: white;
-      }
-
-
-      .fa-instagram {
-        background: #125688;
-        color: white;
-      }
-
-      
-      .fa-pinterest {
-        background: #cb2027;
-        color: white;
-      }
-
-
-      .Brand-logo {
-        text-align: left;
-
+    .Text {
+      font-size: medium;
     }
+    
+  
+  .socials {
 
-      .Text {
-          text-align: left;
+    display:inline-block;
+    vertical-align:top;
+    margin-right: 3em;
+    padding-left: 15%;
+    text-align: center;
 
-      }
+  }
+
+  .socials span {
+   
+    font-size: 2.5em;
+    padding-left: 10px;
+  }
+
+  .socials span :first-child{
+   
+    padding-left: 0;
+
+
+  }
