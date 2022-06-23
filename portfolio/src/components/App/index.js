@@ -5,81 +5,85 @@ import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
 import Search from "../Search";
-import ExperienceSearch from "../ExperienceSearch ";
+import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
-  const [portfolio, setPortfolio] = useState([]);
+	const [portfolio, setPortfolio] = useState([]);
 
-  async function getData() {
-    let res = await fetch("http://localhost:3001/portfolio");
-    let data = await res.json();
-    console.log(data);
-    setPortfolio(data.payload);
-  }
+	async function getData() {
+		let res = await fetch("http://localhost:3001/portfolio");
+		let data = await res.json();
+		console.log(data);
+		setPortfolio(data.payload);
+	}
 
-  useEffect(() => {
-    getData();
-  }, []);
+	useEffect(() => {
+		getData();
+	}, []);
 
-  const [resetClass, setResetClass] = useState("reset-button");
+	const [resetClass, setResetClass] = useState("reset-button");
 
-  async function searchByKeyword(e) {
-    e.preventDefault();
-    const input = e.target.searchInput.value;
-    e.target.reset();
+	async function searchByKeyword(e) {
+		e.preventDefault();
+		const input = e.target.searchInput.value;
+		e.target.reset();
 
-    let res = await fetch(`http://localhost:3001/portfolio/?keyword=${input}`);
-    let data = await res.json();
-    setPortfolio(data.payload);
-    setResetClass("reset-button show");
-  }
+		let res = await fetch(
+			`http://localhost:3001/portfolio/?keyword=${input}`
+		);
+		let data = await res.json();
+		setPortfolio(data.payload);
+		setResetClass("reset-button show");
+	}
 
-  async function searchByDesigner(e) {
-    e.preventDefault();
-    const input = e.target.searchInput.value;
-    e.target.reset();
+	async function searchByDesigner(e) {
+		e.preventDefault();
+		const input = e.target.searchInput.value;
+		e.target.reset();
 
-    let res = await fetch(`http://localhost:3001/portfolio/?designer=${input}`);
-    let data = await res.json();
-    setPortfolio(data.payload);
-    setResetClass("reset-button show");
-  }
+		let res = await fetch(
+			`http://localhost:3001/portfolio/?designer=${input}`
+		);
+		let data = await res.json();
+		setPortfolio(data.payload);
+		setResetClass("reset-button show");
+	}
 
-  function searchByExperience(e){
-    e.preventDefault();
-    const input = e.target.value;
-    console.log(input);
-    setResetClass("reset-button show");
-  }
+	function searchByExperience(e) {
+		e.preventDefault();
+		const input = e.target.value;
+		console.log(input);
+		setResetClass("reset-button show");
+	}
 
-  function resetSearch(e) {
-    e.preventDefault();
-    setResetClass("reset-button");
-    const help = document.querySelector(".experience-search");
-    help.value ="initial";
-    getData();
-  }
+	function resetSearch(e) {
+		e.preventDefault();
+		setResetClass("reset-button");
+		const help = document.querySelector(".experience-search");
+		help.value = "initial";
+		getData();
+	}
 
-  return (
-    <div className="App">
-      <Navbar />
-      <Header />
-      <div className="search-section">
-        <Search onSubmit={searchByKeyword} type="keyword" />
-        <Search onSubmit={searchByDesigner} type="Designer's Name" />
-        <ExperienceSearch onChange={searchByExperience}/>
-        <button className={resetClass} onClick={resetSearch}>
-          Press to remove filter
-        </button>
-      </div>
-      <main>
-        <p></p>
-        <FolioList portfolio={portfolio} />
-      </main>
+	return (
+		<div className="App">
+			<Navbar />
+			<Header />
+			<div className="search-section">
+				<Search onSubmit={searchByKeyword} type="keyword" />
+				<Search onSubmit={searchByDesigner} type="Designer's Name" />
+				<ExperienceSearch onChange={searchByExperience} />
+				<button className={resetClass} onClick={resetSearch}>
+					Press to remove filter
+				</button>
+			</div>
+			<main>
+				<p></p>
+				<FolioList portfolio={portfolio} />
+			</main>
 
-      <Footer />
-    </div>
-  );
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
