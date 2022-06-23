@@ -51,9 +51,9 @@ a:hover {
 
 /* below is used to toggle reset filter button*/
 .reset-button {
-  display: none;
+  visibility: hidden;
 }
 
 .reset-button.show {
-  display: inline;
+  visibility: visible;
 }
