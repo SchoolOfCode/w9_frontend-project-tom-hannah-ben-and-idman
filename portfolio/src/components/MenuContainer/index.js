@@ -1,9 +1,10 @@
 // import { useState } from "react";
 // import MenuButton from "./MenuButton";
 import Menu from "./Menu";
+// import "./menucontainer.css";
 
 export default function MenuContainer({ menuVis, closeMenu }) {
-	console.log(menuVis.visible);
+	// console.log(menuVis.visible);
 	return (
 		<div className="MenuContainer">
 			{/* <MenuButton onClick={menuOnClick} /> */}

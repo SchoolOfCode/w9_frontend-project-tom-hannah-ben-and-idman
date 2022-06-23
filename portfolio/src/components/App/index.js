@@ -9,6 +9,7 @@ import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
+
   const [portfolio, setPortfolio] = useState([]);
 
   async function getData() {
