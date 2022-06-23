@@ -1,22 +1,13 @@
-#roundButton {
-	background-color: #96d9ff;
-	margin-bottom: 20px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	border: 10px solid #0065a6;
-	outline: none;
-	transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+.MenuButton {
+	/* transition: 0.5s ease-in; */
+	color: var(--black);
 }
 
-#roundButton:hover {
-	background-color: #96d9ff;
+.MenuButton:hover {
+	text-decoration: underline var(--blue) wavy 2.5px;
 	cursor: pointer;
-	border-color: #003557;
-	transform: scale(1.2, 1.2);
 }
 
-#roundButton:active {
-	border-color: #003557;
-	background-color: #fff;
+#fa-upload {
+	padding-left: 8px;
 }

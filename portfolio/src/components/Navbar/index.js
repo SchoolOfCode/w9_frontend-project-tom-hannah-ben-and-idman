@@ -14,7 +14,7 @@ export default function Navbar({ menuOnClick }) {
 				</span>
 				<ul className="nav-list">
 					<li>
-						<MenuButton onClick={menuOnClick} />
+						<MenuButton onClick={menuOnClick} type="upload" />
 					</li>
 					<li>Login</li>
 					<li>Sign Up</li>

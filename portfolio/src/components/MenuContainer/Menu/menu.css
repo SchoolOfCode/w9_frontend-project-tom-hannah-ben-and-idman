@@ -23,12 +23,29 @@
 	overflow: hidden;
 }
 
-/* #flyoutMenu h2 a {
-    color: #333;
-    margin-left: 15px;
-    text-decoration: none;
-  }
-   
-  #flyoutMenu h2 a:hover {
-    text-decoration: underline;
-  } */
+.menu-close {
+	font-size: 3.3em;
+	text-align: right;
+	padding-top: 20px;
+	color: var(--black);
+	/* border: 2px solid red; */
+	position: relative;
+	left: calc(100% - 30% - 25px);
+	width: 30%;
+	display: block;
+}
+
+.menu-close-span {
+	transition: 0.5s ease-out;
+	padding: 0 10px 0 30px;
+	/* border: 2px solid blue; */
+}
+
+.menu-close-span:hover {
+	color: var(--white);
+	/* transform: scale(1.5); */
+	/* animation-name: spin; */
+	/* transition-timing-function: ease-out; */
+	/* transform: rotateY(90deg); */
+	/* transform: skew(90deg); */
+}

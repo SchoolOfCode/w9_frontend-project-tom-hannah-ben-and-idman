@@ -1,4 +1,5 @@
 import "./menu.css";
+import { FaRegWindowClose } from "react-icons/fa";
 
 export default function Menu({ onClick, menuVis, closeMenu }) {
 	let visibility = "hide";
@@ -10,7 +11,12 @@ export default function Menu({ onClick, menuVis, closeMenu }) {
 	}
 
 	return (
-		<div id="sidebar" onClick={onClick} className={visibility}>
+		<div id="sidebar" className={visibility}>
+			<div className="menu-close">
+				<span className="menu-close-span" onClick={closeMenu}>
+					<FaRegWindowClose />
+				</span>
+			</div>
 			<p>Hello</p>
 			<form>
 				<label>

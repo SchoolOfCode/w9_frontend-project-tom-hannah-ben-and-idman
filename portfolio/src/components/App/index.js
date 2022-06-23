@@ -71,7 +71,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar menuOnClick={menuOnClick} />
-			<MenuContainer menuVis={menuVis} />
+			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
 			<Header />
 			<Search
 				onSubmit={searchByKeyword}
