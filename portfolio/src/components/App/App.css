@@ -48,6 +48,7 @@ a:hover {
 .search-section {
   display: flex;
   justify-content: space-around;
+  padding-top: 1em;
 }
 
 /* below is used to toggle reset filter button*/
@@ -61,7 +62,8 @@ a:hover {
 
 /*BUTTONS*/
 button,
-input[type="text"] {
+input[type="text"],
+select {
   font-family: var(--font);
   font-size: 1.05em;
   background-color: transparent;
