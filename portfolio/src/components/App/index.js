@@ -5,6 +5,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
 import Search from "../Search";
+import ExperienceSearch from "../ExperienceSearch ";
 
 function App() {
   const [portfolio, setPortfolio] = useState([]);
@@ -44,9 +45,19 @@ function App() {
     setResetClass("reset-button show");
   }
 
+  function searchByExperience(e){
+    e.preventDefault();
+    const input = e.target.value;
+    console.log(input);
+    setResetClass("reset-button show");
+  }
+
   function resetSearch(e) {
     e.preventDefault();
     setResetClass("reset-button");
+    const help = document.querySelector(".experience-search");
+    help.value ="initial";
+    console.log(help);
     getData();
   }
 
@@ -56,10 +67,11 @@ function App() {
       <Header />
       <div className="search-section">
         <Search onSubmit={searchByKeyword} type="keyword" />
+        <Search onSubmit={searchByDesigner} type="Designer's Name" />
+        <ExperienceSearch onChange={searchByExperience}/>
         <button className={resetClass} onClick={resetSearch}>
           Press to remove filter
         </button>
-        <Search onSubmit={searchByDesigner} type="Designer's Name" />
       </div>
       <main>
         <p></p>
