@@ -4,8 +4,10 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
+import Upload from "../Upload";
 import Search from "../Search";
 import ExperienceSearch from "../ExperienceSearch";
+
 
 function App() {
 	const [portfolio, setPortfolio] = useState([]);
@@ -80,6 +82,7 @@ function App() {
 				<p></p>
 				<FolioList portfolio={portfolio} />
 			</main>
+			<Upload/>
 
 			<Footer />
 		</div>
