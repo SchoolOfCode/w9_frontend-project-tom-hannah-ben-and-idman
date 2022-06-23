@@ -10,101 +10,108 @@ import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
-	const [portfolio, setPortfolio] = useState([]);
 
-	async function getData() {
-		let res = await fetch("http://localhost:3001/portfolio");
-		let data = await res.json();
-		console.log(data);
-		setPortfolio(data.payload);
-	}
+  const [portfolio, setPortfolio] = useState([]);
 
-	useEffect(() => {
-		getData();
-	}, []);
+  async function getData() {
+    let res = await fetch("http://localhost:3001/portfolio");
+    let data = await res.json();
+    console.log(data);
+    setPortfolio(data.payload);
+  }
 
-	const [resetClass, setResetClass] = useState("reset-button");
+  useEffect(() => {
+    getData();
+  }, []);
 
-	async function searchByKeyword(e) {
-		e.preventDefault();
-		const input = e.target.searchInput.value;
-		e.target.reset();
+  const [resetClass, setResetClass] = useState("reset-button");
+  //when keyword search done by user new api call completed
+  async function searchByKeyword(e) {
+    e.preventDefault();
+    const input = e.target.searchInput.value;
+    e.target.reset();
 
-		let res = await fetch(
-			`http://localhost:3001/portfolio/?keyword=${input}`
-		);
-		let data = await res.json();
-		setPortfolio(data.payload);
-		setResetClass("reset-button show");
-	}
+    let res = await fetch(`http://localhost:3001/portfolio/?keyword=${input}`);
+    let data = await res.json();
+    setPortfolio(data.payload);
+    setResetClass("reset-button show");
+  }
 
-	async function searchByDesigner(e) {
-		e.preventDefault();
-		const input = e.target.searchInput.value;
-		e.target.reset();
+  //when designer search done by user new api call completed
+  async function searchByDesigner(e) {
+    e.preventDefault();
+    const input = e.target.searchInput.value;
+    e.target.reset();
 
-		let res = await fetch(
-			`http://localhost:3001/portfolio/?designer=${input}`
-		);
-		let data = await res.json();
-		setPortfolio(data.payload);
-		setResetClass("reset-button show");
-	}
+    let res = await fetch(`http://localhost:3001/portfolio/?designer=${input}`);
+    let data = await res.json();
+    setPortfolio(data.payload);
+    setResetClass("reset-button show");
+  }
 
-	function onClick(e) {
-		e.preventDefault();
-		setResetClass("reset-button");
-		getData();
-	}
+  //when experience search done by user new api call completed
+  async function searchByExperience(e) {
+    e.preventDefault();
+    const input = e.target.value;
+    let res = await fetch(
+      `http://localhost:3001/portfolio/?experience=${input}`
+    );
+    let data = await res.json();
+    setPortfolio(data.payload);
+    setResetClass("reset-button show");
+  }
 
-	// VISIBILITY OF SLIDE OUT MENU
-	const [menuVis, setMenuVis] = useState({ visible: false });
+  function onClick(e) {
+    e.preventDefault();
+    setResetClass("reset-button");
+    getData();
+  }
 
-	function toggleMenu() {
-		console.log("toggle run");
-		setMenuVis({ visible: !menuVis.visible });
-	}
+  // VISIBILITY OF SLIDE OUT MENU
+  const [menuVis, setMenuVis] = useState({ visible: false });
 
-	function menuOnClick() {
-		toggleMenu();
-		console.log("clicked");
-	}
-	function searchByExperience(e) {
-		e.preventDefault();
-		const input = e.target.value;
-		console.log(input);
-		setResetClass("reset-button show");
-	}
+  function toggleMenu() {
+    console.log("toggle run");
+    setMenuVis({ visible: !menuVis.visible });
+  }
 
-	function resetSearch(e) {
-		e.preventDefault();
-		setResetClass("reset-button");
-		const help = document.querySelector(".experience-search");
-		help.value = "initial";
-		getData();
-	}
+  function menuOnClick() {
+    toggleMenu();
+    console.log("clicked");
+  }
 
-	return (
-		<div className="App">
-			<Navbar menuOnClick={menuOnClick} />
-			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
-			<Header />
-			<div className="search-section">
-				<Search onSubmit={searchByKeyword} type="keyword" />
-				<Search onSubmit={searchByDesigner} type="Designer's Name" />
-				<ExperienceSearch onChange={searchByExperience} />
-				<button className={resetClass} onClick={resetSearch}>
-					Press to remove filter
-				</button>
-			</div>
+  function resetSearch(e) {
+    e.preventDefault();
+    setResetClass("reset-button");
+    const help = document.querySelector(".experience-search");
+    help.value = "initial";
+    getData();
+  }
 
-			<main>
-				<p></p>
-				<FolioList portfolio={portfolio} />
-			</main>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Navbar menuOnClick={menuOnClick} />
+      <MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
+      <Header />
+      <div className="search-section">
+        <Search onSubmit={searchByKeyword} type="keyword" />
+        <Search onSubmit={searchByDesigner} type="Designer's Name" />
+        <ExperienceSearch onChange={searchByExperience} />
+        <button className={resetClass} onClick={resetSearch}>
+          Press to remove filter
+        </button>
+      </div>
+
+      <main>
+        <p></p>
+        <FolioList portfolio={portfolio} />
+      </main>
+
+      <Upload />
+
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

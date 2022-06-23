@@ -3,18 +3,18 @@
 /* https://coolors.co/011627-78cad2-f3f7f6-5497a7-e5625e */
 
 :root {
-	--blue: #78cad2;
-	--greyblue: #5497a7;
-	--red: #e5625e;
-	--white: #f3f7f6;
-	--black: #011627;
-	--font: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
+  --blue: #78cad2;
+  --greyblue: #5497a7;
+  --red: #e5625e;
+  --white: #f3f7f6;
+  --black: #011627;
+  --font: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
 }
 
 .App {
-	text-align: left;
-	min-height: 100vh;
-	font-family: var(--font);
+  text-align: left;
+  min-height: 100vh;
+  font-family: var(--font);
 }
 
 .App-logo {
@@ -26,14 +26,14 @@
 }
 
 .App-header {
-	background-color: var(--blue);
-	height: 180px;
-	display: flex;
-	flex-direction: column;
-	align-items: left;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: var(--white);
+  background-color: var(--blue);
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--white);
 }
 
 a {
@@ -62,30 +62,30 @@ a:hover {
 /*BUTTONS*/
 button,
 input[type="text"] {
-	font-family: var(--font);
-	font-size: 1.05em;
-	background-color: transparent;
-	border: 0.5px solid var(--black);
-	color: var(--black);
-	border-radius: 5px;
-	margin-left: 10px;
-	line-height: 1.2em;
-	vertical-align: middle;
-	padding-bottom: 2px;
+  font-family: var(--font);
+  font-size: 1.05em;
+  background-color: transparent;
+  border: 0.5px solid var(--black);
+  color: var(--black);
+  border-radius: 5px;
+  margin-left: 10px;
+  line-height: 1.2em;
+  vertical-align: middle;
+  padding-bottom: 2px;
 }
 
 button:hover {
-	background-color: var(--blue);
-	border: 0.5px solid var(--blue);
+  background-color: var(--blue);
+  border: 0.5px solid var(--blue);
 }
 
 /*INPUTS*/
 input[type="text"] {
-	margin-left: 4px;
-	padding-left: 6px;
-	width: 6em;
+  margin-left: 4px;
+  padding-left: 6px;
+  width: 6em;
 }
 
 .react-icons {
-	vertical-align: middle;
+  vertical-align: middle;
 }
