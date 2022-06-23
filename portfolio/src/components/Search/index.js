@@ -17,20 +17,17 @@
 //if search done button appears to reset
 import "./search.css";
 
-export default function Search({ onSubmit, type, resetClass, onClick }) {
-	return (
-		<div className="Search">
-			<form className="search-form" onSubmit={onSubmit}>
-				<label>
-					Search by {type}: <input type="text" name="searchInput" />
-				</label>
-				<button type="submit" className="go-search-btn">
+export default function Search({ onSubmit, type }) {
+  return (
+    <div>
+      <form className="search-form" onSubmit={onSubmit}>
+        <label>
+          Search by {type}: <input type="text" name="searchInput" />
+        </label>
+        <button type="submit" className="go-search-btn">
 					<span className="btn-text">Go →</span>
 				</button>
-			</form>
-			<button className={resetClass} onClick={onClick}>
-				Press to remove filter
-			</button>
-		</div>
-	);
+      </form>
+    </div>
+  );
 }
