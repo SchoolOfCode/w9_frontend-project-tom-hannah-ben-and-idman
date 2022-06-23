@@ -57,7 +57,6 @@ function App() {
     setResetClass("reset-button");
     const help = document.querySelector(".experience-search");
     help.value ="initial";
-    console.log(help);
     getData();
   }
 
