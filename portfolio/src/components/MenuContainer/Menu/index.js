@@ -4,7 +4,6 @@ import { FaRegWindowClose } from "react-icons/fa";
 
 export default function Menu({ onClick, menuVis, closeMenu }) {
 	let visibility = "hide";
-	// console.log(menuVis);
 
 	if (menuVis) {
 		visibility = "show";

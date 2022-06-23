@@ -4,7 +4,6 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
-import Upload from "../Upload";
 import Search from "../Search";
 import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
@@ -109,8 +108,6 @@ function App() {
 				<p></p>
 				<FolioList portfolio={portfolio} />
 			</main>
-
-			{/* <Upload /> */}
 
 			<Footer />
 		</div>
