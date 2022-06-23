@@ -4,13 +4,11 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
-import Upload from "../Upload";
 import Search from "../Search";
 import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
-
   const [portfolio, setPortfolio] = useState([]);
 
   async function getData() {
@@ -60,12 +58,13 @@ function App() {
     setPortfolio(data.payload);
     setResetClass("reset-button show");
   }
-
+  /*
   function onClick(e) {
     e.preventDefault();
     setResetClass("reset-button");
     getData();
   }
+  */
 
   // VISIBILITY OF SLIDE OUT MENU
   const [menuVis, setMenuVis] = useState({ visible: false });
@@ -80,6 +79,7 @@ function App() {
     console.log("clicked");
   }
 
+  //removes the search filters
   function resetSearch(e) {
     e.preventDefault();
     setResetClass("reset-button");
@@ -106,8 +106,6 @@ function App() {
         <p></p>
         <FolioList portfolio={portfolio} />
       </main>
-
-      <Upload />
 
       <Footer />
     </div>
