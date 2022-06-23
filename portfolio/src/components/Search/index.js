@@ -24,7 +24,9 @@ export default function Search({ onSubmit, type }) {
         <label>
           Search by {type}: <input type="text" name="searchInput" />
         </label>
-        <button type="submit">Go</button>
+        <button type="submit" className="go-search-btn">
+					<span className="btn-text">Go →</span>
+				</button>
       </form>
     </div>
   );
