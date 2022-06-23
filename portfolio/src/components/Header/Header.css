@@ -1,22 +1,28 @@
 .header {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-  width: 100%;
-   height: 250px;
-   display: block;
-  text-align: center;
-  background: #011627;
-  color: white;
-  float: center;
-  transition: 0.2s;
-  font-size: small
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 250px;
+	text-align: center;
+	background: var(--greyblue);
+	color: white;
+	background-image: url("http://localhost:3000/static/media/jene-stephaniuk--MCrF6hnojU-unsplash.7e323c3f0230dc78d65e.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
+.headerimg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.35);
 }
 
 .header-logo {
-  width: 700px;
-  height: 100%;
-  display: block;
-  margin: 0 auto;
+	height: 60%;
+	display: block;
+	margin: 0 auto;
 }

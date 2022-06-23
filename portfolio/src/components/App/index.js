@@ -102,9 +102,6 @@ function App() {
 				<p></p>
 				<FolioList portfolio={portfolio} />
 			</main>
-
-			<Upload />
-
 			<Footer />
 		</div>
 	);

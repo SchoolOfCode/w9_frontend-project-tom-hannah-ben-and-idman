@@ -1,4 +1,5 @@
 import "./menu.css";
+import Upload from "../../Upload";
 import { FaRegWindowClose } from "react-icons/fa";
 
 export default function Menu({ onClick, menuVis, closeMenu }) {
@@ -17,12 +18,7 @@ export default function Menu({ onClick, menuVis, closeMenu }) {
 					<FaRegWindowClose />
 				</span>
 			</div>
-			<p>Hello</p>
-			<form>
-				<label>
-					First name: <input type="text" placeholder="First name" />
-				</label>
-			</form>
+			<Upload />
 		</div>
 	);
 }
