@@ -51,7 +51,6 @@ function App() {
 		setResetClass("reset-button show");
 	}
 
-
 	function onClick(e) {
 		e.preventDefault();
 		setResetClass("reset-button");
@@ -69,7 +68,7 @@ function App() {
 	function menuOnClick() {
 		toggleMenu();
 		console.log("clicked");
-
+	}
 	function searchByExperience(e) {
 		e.preventDefault();
 		const input = e.target.value;
@@ -83,12 +82,10 @@ function App() {
 		const help = document.querySelector(".experience-search");
 		help.value = "initial";
 		getData();
-
 	}
 
 	return (
 		<div className="App">
-
 			<Navbar menuOnClick={menuOnClick} />
 			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
 			<Header />
@@ -106,7 +103,7 @@ function App() {
 				<FolioList portfolio={portfolio} />
 			</main>
 
-			<Upload/>
+			<Upload />
 
 			<Footer />
 		</div>
