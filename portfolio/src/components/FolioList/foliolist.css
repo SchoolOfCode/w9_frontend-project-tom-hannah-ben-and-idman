@@ -19,3 +19,9 @@
 		grid-template-columns: 1fr 1fr;
 	}
 }
+
+#length-zero-msg {
+	text-align: center;
+	font-weight: 700;
+	font-size: 1.2em;
+}
