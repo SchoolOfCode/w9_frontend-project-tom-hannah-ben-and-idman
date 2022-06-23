@@ -55,13 +55,9 @@ function App() {
   function resetSearch(e) {
     e.preventDefault();
     setResetClass("reset-button");
-    const help = document.getElementsByClassName("experience-search");
-
-    help.searchInput.selected = help.searchInput.options[0];
-    console.log(help.searchInput); 
-    console.log(help.searchInput.selectedOptions)
-    console.log(help.searchInput.options[0])
-
+    const help = document.querySelector(".experience-search");
+    help.value ="initial";
+    console.log(help);
     getData();
   }
 
