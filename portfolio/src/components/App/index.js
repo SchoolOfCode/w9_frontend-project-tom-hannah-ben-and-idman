@@ -55,10 +55,23 @@ function App() {
 		getData();
 	}
 
+	// VISIBILITY OF SLIDE OUT MENU
+	const [menuVis, setMenuVis] = useState({ visible: false });
+
+	function toggleMenu() {
+		console.log("toggle run");
+		setMenuVis({ visible: !menuVis.visible });
+	}
+
+	function menuOnClick() {
+		toggleMenu();
+		console.log("clicked");
+	}
+
 	return (
 		<div className="App">
-			<Navbar />
-			<MenuContainer />
+			<Navbar menuOnClick={menuOnClick} />
+			<MenuContainer menuVis={menuVis} />
 			<Header />
 			<Search
 				onSubmit={searchByKeyword}

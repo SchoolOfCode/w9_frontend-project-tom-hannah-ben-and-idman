@@ -2,23 +2,13 @@ import { useState } from "react";
 import MenuButton from "./MenuButton";
 import Menu from "./Menu";
 
-export default function MenuContainer() {
-	const [menuVis, setMenuVis] = useState({ visible: false });
-
-	function toggleMenu() {
-		console.log("toggle run");
-		setMenuVis({ visible: !menuVis.visible });
-	}
-
-	function menuOnClick() {
-		toggleMenu();
-		console.log("clicked");
-	}
+export default function MenuContainer({ menuVis, closeMenu }) {
 	console.log(menuVis.visible);
 	return (
 		<div className="MenuContainer">
-			<MenuButton onClick={menuOnClick} />
-			<Menu onClick={menuOnClick} menuVis={menuVis.visible} />
+			{/* <MenuButton onClick={menuOnClick} /> */}
+			{/* <Menu onClick={menuOnClick} menuVis={menuVis.visible} /> */}
+			<Menu menuVis={menuVis.visible} closeMenu={closeMenu} />
 		</div>
 	);
 }

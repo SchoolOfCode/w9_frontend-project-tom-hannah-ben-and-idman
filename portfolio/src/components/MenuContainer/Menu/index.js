@@ -1,6 +1,6 @@
 import "./menu.css";
 
-export default function Menu({ onClick, menuVis }) {
+export default function Menu({ onClick, menuVis, closeMenu }) {
 	let visibility = "hide";
 
 	console.log(menuVis);
