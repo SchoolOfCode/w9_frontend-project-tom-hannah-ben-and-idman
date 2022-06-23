@@ -4,7 +4,7 @@
 }
 
 .MenuButton:hover {
-	text-decoration: underline var(--blue) wavy 2.5px;
+	border-bottom: 4px dashed var(--blue);
 	cursor: pointer;
 }
 
