@@ -28,6 +28,7 @@ export default function Footer() {
 						src="logos/portfol-logo-horiz-xpnt-L.png"
 						alt="Portfol.io logo"
 					/>
+
 				</div>
 				<div className="Text">
 					<p>
@@ -39,3 +40,4 @@ export default function Footer() {
 		</div>
 	);
 }
+

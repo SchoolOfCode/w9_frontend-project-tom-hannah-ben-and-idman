@@ -4,8 +4,10 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
+import Upload from "../Upload";
 import Search from "../Search";
 import MenuContainer from "../MenuContainer";
+import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
 	const [portfolio, setPortfolio] = useState([]);
@@ -49,6 +51,7 @@ function App() {
 		setResetClass("reset-button show");
 	}
 
+
 	function onClick(e) {
 		e.preventDefault();
 		setResetClass("reset-button");
@@ -66,29 +69,44 @@ function App() {
 	function menuOnClick() {
 		toggleMenu();
 		console.log("clicked");
+
+	function searchByExperience(e) {
+		e.preventDefault();
+		const input = e.target.value;
+		console.log(input);
+		setResetClass("reset-button show");
+	}
+
+	function resetSearch(e) {
+		e.preventDefault();
+		setResetClass("reset-button");
+		const help = document.querySelector(".experience-search");
+		help.value = "initial";
+		getData();
+
 	}
 
 	return (
 		<div className="App">
+
 			<Navbar menuOnClick={menuOnClick} />
 			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
 			<Header />
-			<Search
-				onSubmit={searchByKeyword}
-				type="keyword"
-				resetClass={resetClass}
-				onClick={onClick}
-			/>
-			<Search
-				onSubmit={searchByDesigner}
-				type="Designer's Name"
-				resetClass={resetClass}
-				onClick={onClick}
-			/>
+			<div className="search-section">
+				<Search onSubmit={searchByKeyword} type="keyword" />
+				<Search onSubmit={searchByDesigner} type="Designer's Name" />
+				<ExperienceSearch onChange={searchByExperience} />
+				<button className={resetClass} onClick={resetSearch}>
+					Press to remove filter
+				</button>
+			</div>
+
 			<main>
 				<p></p>
 				<FolioList portfolio={portfolio} />
 			</main>
+
+			<Upload/>
 
 			<Footer />
 		</div>

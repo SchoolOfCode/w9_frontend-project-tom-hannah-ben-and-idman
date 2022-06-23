@@ -18,11 +18,11 @@
 }
 
 .App-logo {
-	height: auto;
-	width: 40%;
-	max-width: 620px;
-	margin-left: 20px;
-	pointer-events: none;
+  height: auto;
+  width: 40%;
+  max-width: 620px;
+  margin-left: 20px;
+  pointer-events: none;
 }
 
 .App-header {
@@ -37,12 +37,26 @@
 }
 
 a {
-	color: var(--red);
-	text-decoration: none;
+  color: var(--red);
+  text-decoration: none;
 }
 
 a:hover {
-	color: var(--greyblue);
+  color: var(--greyblue);
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* below is used to toggle reset filter button*/
+.reset-button {
+  visibility: hidden;
+}
+
+.reset-button.show {
+  visibility: visible;
 }
 
 /*BUTTONS*/
