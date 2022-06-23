@@ -8,20 +8,21 @@
 	--red: #e5625e;
 	--white: #f3f7f6;
 	--black: #011627;
+	--font: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
 }
 
 .App {
 	text-align: left;
 	min-height: 100vh;
-	font-family: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
+	font-family: var(--font);
 }
 
 .App-logo {
-	height: auto;
-	width: 40%;
-	max-width: 620px;
-	margin-left: 20px;
-	pointer-events: none;
+  height: auto;
+  width: 40%;
+  max-width: 620px;
+  margin-left: 20px;
+  pointer-events: none;
 }
 
 .App-header {
@@ -32,14 +33,55 @@
 	align-items: left;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: var(--white);
 }
 
 a {
-	color: var(--red);
-	text-decoration: none;
+  color: var(--red);
+  text-decoration: none;
 }
 
 a:hover {
-	color: var(--greyblue);
+  color: var(--greyblue);
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* below is used to toggle reset filter button*/
+.reset-button {
+  visibility: hidden;
+}
+
+.reset-button.show {
+  visibility: visible;
+}
+
+/*BUTTONS*/
+button,
+input[type="text"] {
+	font-family: var(--font);
+	font-size: 1.05em;
+	background-color: transparent;
+	border: 0.5px solid var(--black);
+	color: var(--black);
+	border-radius: 5px;
+	margin-left: 10px;
+	line-height: 1.2em;
+	vertical-align: middle;
+	padding-bottom: 2px;
+}
+
+button:hover {
+	background-color: var(--blue);
+	border: 0.5px solid var(--blue);
+}
+
+/*INPUTS*/
+input[type="text"] {
+	margin-left: 4px;
+	padding-left: 6px;
+	width: 6em;
 }
