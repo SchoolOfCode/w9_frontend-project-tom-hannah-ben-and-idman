@@ -4,7 +4,9 @@ import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
 import FolioList from "../FolioList";
+import Upload from "../Upload";
 import Search from "../Search";
+import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
@@ -49,6 +51,24 @@ function App() {
 		setResetClass("reset-button show");
 	}
 
+	function onClick(e) {
+		e.preventDefault();
+		setResetClass("reset-button");
+		getData();
+	}
+
+	// VISIBILITY OF SLIDE OUT MENU
+	const [menuVis, setMenuVis] = useState({ visible: false });
+
+	function toggleMenu() {
+		console.log("toggle run");
+		setMenuVis({ visible: !menuVis.visible });
+	}
+
+	function menuOnClick() {
+		toggleMenu();
+		console.log("clicked");
+	}
 	function searchByExperience(e) {
 		e.preventDefault();
 		const input = e.target.value;
@@ -66,7 +86,8 @@ function App() {
 
 	return (
 		<div className="App">
-			<Navbar />
+			<Navbar menuOnClick={menuOnClick} />
+			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
 			<Header />
 			<div className="search-section">
 				<Search onSubmit={searchByKeyword} type="keyword" />
@@ -76,11 +97,11 @@ function App() {
 					Press to remove filter
 				</button>
 			</div>
+
 			<main>
 				<p></p>
 				<FolioList portfolio={portfolio} />
 			</main>
-
 			<Footer />
 		</div>
 	);

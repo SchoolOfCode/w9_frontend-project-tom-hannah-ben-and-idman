@@ -1,6 +1,7 @@
 import "./navbar.css";
+import MenuButton from "../MenuContainer/MenuButton";
 
-export default function Navbar() {
+export default function Navbar({ menuOnClick }) {
 	return (
 		<div className="Navbar">
 			<nav className="navbar-nav">
@@ -12,7 +13,9 @@ export default function Navbar() {
 					/>
 				</span>
 				<ul className="nav-list">
-					<li>Upload</li>
+					<li>
+						<MenuButton onClick={menuOnClick} type="upload" />
+					</li>
 					<li>Login</li>
 					<li>Sign Up</li>
 				</ul>

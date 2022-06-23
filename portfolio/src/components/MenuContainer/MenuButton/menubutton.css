@@ -1,0 +1,13 @@
+.MenuButton {
+	/* transition: 0.5s ease-in; */
+	color: var(--black);
+}
+
+.MenuButton:hover {
+	border-bottom: 4px dashed var(--blue);
+	cursor: pointer;
+}
+
+#fa-upload {
+	padding-left: 8px;
+}

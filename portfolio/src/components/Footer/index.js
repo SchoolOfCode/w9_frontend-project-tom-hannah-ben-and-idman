@@ -13,6 +13,7 @@ library.add(fas, faTwitter, faFacebook, faInstagram, faPinterest,faFontAwesome)
 
 
 
+
 export default function Footer(){
 
     return (
@@ -27,10 +28,12 @@ export default function Footer(){
   
          <div className= "Brand-logo">
          <img
+
 						className="navbar-logo"
 						src="logos/portfol-logo-horiz-xpnt-L.png"
 						alt="Portfol.io logo"
 					/>
+
          </div>
          <div className= "Text">
            <p>Portfol.io </p>
@@ -39,7 +42,6 @@ export default function Footer(){
    </div> 
     
   </div> 
-
-);
-
+	);
 }
+

@@ -85,3 +85,7 @@ input[type="text"] {
 	padding-left: 6px;
 	width: 6em;
 }
+
+.react-icons {
+	vertical-align: middle;
+}
