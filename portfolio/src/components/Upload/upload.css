@@ -1,0 +1,59 @@
+.Upload {
+	font-size: 1.05em;
+}
+
+.Upload fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Upload label {
+	line-height: 1.1em;
+	display: block;
+	margin-top: 1em;
+}
+
+.Upload label:first-child {
+	margin-top: 1.5em;
+}
+
+.Upload input[type="text"] {
+	display: block;
+	margin: 0.5em 0;
+	width: unset;
+	background-color: var(--white);
+}
+
+p.radio-desc {
+	font-weight: 700;
+	margin-top: 1.5em;
+}
+
+.upload-radios input {
+	margin-right: 8px;
+	accent-color: var(--black);
+}
+
+.upload-radios label {
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	font-weight: 400;
+}
+
+.upload-submit-btn[type="submit"] {
+	font-size: 1.1em;
+	padding: 5px 10px;
+	margin: unset;
+	margin-top: 20px;
+	font-weight: 700;
+	background-color: var(--white);
+}
+
+.upload-submit-btn:hover {
+	transition: 0.5s;
+	background-color: var(--black);
+	color: var(--white);
+	cursor: pointer;
+}
