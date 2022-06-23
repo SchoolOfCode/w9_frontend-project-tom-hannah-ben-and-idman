@@ -11,7 +11,7 @@
 	left: 0;
 	transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
 	overflow: scroll;
-	z-index: 1000;
+	padding: 0 20px 0 30px;
 }
 
 #sidebar.hide {
@@ -28,9 +28,8 @@
 	text-align: right;
 	padding-top: 20px;
 	color: var(--black);
-	/* border: 2px solid red; */
 	position: relative;
-	left: calc(100% - 30% - 25px);
+	left: calc(100% - 30% - 60px);
 	width: 30%;
 	display: block;
 }
@@ -38,14 +37,8 @@
 .menu-close-span {
 	transition: 0.5s ease-out;
 	padding: 0 10px 0 30px;
-	/* border: 2px solid blue; */
 }
 
 .menu-close-span:hover {
 	color: var(--white);
-	/* transform: scale(1.5); */
-	/* animation-name: spin; */
-	/* transition-timing-function: ease-out; */
-	/* transform: rotateY(90deg); */
-	/* transform: skew(90deg); */
 }
