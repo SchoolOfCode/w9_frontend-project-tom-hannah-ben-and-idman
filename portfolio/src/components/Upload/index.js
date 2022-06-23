@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 /* 
 Plan:
 Funtion that takes in:
@@ -28,7 +28,8 @@ function Upload() {
   designers_name: "",
   site_url: "",
   site_image: "",
-  description: ""
+  description: "",
+  experience_level: ""
 })
 //const [sentData, setSentData] = useState()
 
@@ -71,6 +72,22 @@ function handleClick(e) {
   e.target.reset();
 }
 
+function handleChangeExperience(e) {
+  const level = e.target.value
+  setPortfolio({
+    ...portfolio, experience_level: level
+  });
+  console.log(e.target.value) 
+ }
+// function handleChange(e) {
+//   const name = e.target.name;
+//   const value = e.target.value === “B” ? evt.target.checked : evt.target.value;
+//   setState({
+//     ...state,
+//     [name]: value
+//   })
+// }
+
 
 
     async function postData() {
@@ -106,11 +123,11 @@ return (
 
 
   <p>Please select the level of your project</p>
-  <input type="radio" id="Beginners project" value="B"/>
-  <label for="html">Beginners project</label><br/>
-  <input type="radio" id="Mid-career project" value="M"/>
-  <label for="css">Mid-career project</label><br/>
-  <input type="radio" id="Experienced project" value="E"/>
+  <input type="radio" id="Beginners project" name = "project" value="B" onChange = {handleChangeExperience}/>
+  <label for="Beginners project">Beginners project</label><br/>
+  <input type="radio" id="Mid-career project" name = "project" value="M" onChange = {handleChangeExperience}/>
+  <label for="Mid-career project">Mid-career project</label><br/>
+  <input type="radio" id="Experienced project" name = "project" value="E" onChange = {handleChangeExperience}/>
   <label for="Experienced project">Experienced project</label><br/><br/>
 
 
