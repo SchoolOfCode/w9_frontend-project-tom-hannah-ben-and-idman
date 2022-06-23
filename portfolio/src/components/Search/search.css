@@ -1,11 +1,58 @@
 .reset-button {
-  display: none;
+	display: none;
 }
 
 .reset-button.show {
-  display: inline;
+	display: inline;
 }
 
 .search-form {
-  display: inline;
+	display: inline;
+}
+
+.Search {
+	line-height: 1.05em;
+	font-size: 1.05em;
+	margin-top: 8px;
+}
+.Search label {
+	vertical-align: midddle;
+}
+
+/********************/
+/*SEARCH BUTTON effect - https://codepen.io/dan10gc/pen/EQbjgP*/
+/********************/
+.go-search-btn {
+	color: var(--black);
+	border: none;
+	position: relative;
+	border-radius: 50px;
+}
+
+.go-search-btn::before {
+	transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	content: "";
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50px;
+	width: 40%;
+	background: var(--blue);
+}
+
+/*unset default button styles from App.css*/
+.go-search-btn:hover {
+	background-color: unset;
+	border: unset;
+}
+.go-search-btn:hover::before {
+	background: var(--blue);
+	width: 100%;
+}
+
+.go-search-btn .btn-text {
+	color: var(--black);
+	mix-blend-mode: multiply;
 }

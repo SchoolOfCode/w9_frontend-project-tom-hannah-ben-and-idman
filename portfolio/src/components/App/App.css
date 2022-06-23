@@ -8,12 +8,13 @@
 	--red: #e5625e;
 	--white: #f3f7f6;
 	--black: #011627;
+	--font: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
 }
 
 .App {
 	text-align: left;
 	min-height: 100vh;
-	font-family: "Lato Regular", "Segoe UI", "Helvetica", "Arial", sans-serif;
+	font-family: var(--font);
 }
 
 .App-logo {
@@ -32,7 +33,7 @@
 	align-items: left;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: var(--white);
 }
 
 a {
@@ -42,4 +43,31 @@ a {
 
 a:hover {
 	color: var(--greyblue);
+}
+
+/*BUTTONS*/
+button,
+input[type="text"] {
+	font-family: var(--font);
+	font-size: 1.05em;
+	background-color: transparent;
+	border: 0.5px solid var(--black);
+	color: var(--black);
+	border-radius: 5px;
+	margin-left: 10px;
+	line-height: 1.2em;
+	vertical-align: middle;
+	padding-bottom: 2px;
+}
+
+button:hover {
+	background-color: var(--blue);
+	border: 0.5px solid var(--blue);
+}
+
+/*INPUTS*/
+input[type="text"] {
+	margin-left: 4px;
+	padding-left: 6px;
+	width: 6em;
 }
