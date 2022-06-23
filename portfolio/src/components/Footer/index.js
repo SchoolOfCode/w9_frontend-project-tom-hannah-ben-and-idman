@@ -1,4 +1,14 @@
 import "./Footer.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import {faFacebook } from '@fortawesome/free-brands-svg-icons'  
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faFacebook, faInstagram, faPinterest, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, faTwitter, faFacebook, faInstagram, faPinterest,faFontAwesome)
+
+
+
 
 
 
@@ -10,10 +20,11 @@ export default function Footer(){
          <hr></hr>
          <div className= "socials"> 
          <h1> Follow us</h1>
-         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-facebook"></a>
-         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-twitter"></a>
-         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-instagram"></a>
-         <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" class="fa fa-pinterest"></a>    
+         <span><FontAwesomeIcon icon="fa-brands fa-twitter" className= "twitter"/></span>
+        <span><FontAwesomeIcon icon="fa-brands fa-facebook" className= "facebook"/></span>
+        <span><FontAwesomeIcon icon="fa-brands fa-instagram" className= "instagram"/></span>
+       <span><FontAwesomeIcon icon="fa-brands fa-pinterest" className= "pinterest"/></span>
+  
          <div className= "Brand-logo">
          <img
 						className="navbar-logo"
@@ -22,7 +33,7 @@ export default function Footer(){
 					/>
          </div>
          <div className= "Text">
-           <p>Portfol.io  is the world’s leading community for creatives to share, grow, and get hired.</p>
+           <p>Portfol.io </p>
          </div>
         
    </div> 
