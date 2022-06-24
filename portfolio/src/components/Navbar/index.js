@@ -8,7 +8,7 @@ export default function Navbar({ menuOnClick }) {
 				<span className="navbarimg">
 					<img
 						className="navbar-logo"
-						src="/logos/portfol-logo-noslogan-invert-horiz-M.png"
+						src="/logos/portfol-logo-noslogan-invert-horiz-xpnt-M.png"
 						alt="Portfol.io logo"
 					/>
 				</span>
