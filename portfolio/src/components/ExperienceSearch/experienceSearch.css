@@ -1,3 +1,12 @@
 .experience-search {
   display: inline;
+ 
+  
+}
+.experience-search-form {
+  color: #00B4CC;
+  border-radius: calc(var(--f-size) / 5);
+	margin-bottom: 40px;
+	box-shadow: 6px 6px 20px 3px #5497a766;
+
 }
