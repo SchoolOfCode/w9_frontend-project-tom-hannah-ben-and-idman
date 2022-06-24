@@ -9,63 +9,67 @@ import MenuContainer from "../MenuContainer";
 import ExperienceSearch from "../ExperienceSearch";
 
 function App() {
+	const [portfolio, setPortfolio] = useState([]);
 
-  const [portfolio, setPortfolio] = useState([]);
+	async function getData() {
+		let res = await fetch("http://localhost:3001/portfolio");
+		let data = await res.json();
+		console.log(data);
+		setPortfolio(data.payload);
+	}
 
-  async function getData() {
-    let res = await fetch("http://localhost:3001/portfolio");
-    let data = await res.json();
-    console.log(data);
-    setPortfolio(data.payload);
-  }
+	useEffect(() => {
+		getData();
+	}, []);
 
-  useEffect(() => {
-    getData();
-  }, []);
+	const [resetClass, setResetClass] = useState("reset-button");
+	//when keyword search done by user new api call completed
+	async function searchByKeyword(e) {
+		e.preventDefault();
+		const input = e.target.searchInput.value;
+		e.target.reset();
 
-  const [resetClass, setResetClass] = useState("reset-button");
-  //when keyword search done by user new api call completed
-  async function searchByKeyword(e) {
-    e.preventDefault();
-    const input = e.target.searchInput.value;
-    e.target.reset();
+		let res = await fetch(
+			`http://localhost:3001/portfolio/?keyword=${input}`
+		);
+		let data = await res.json();
+		setPortfolio(data.payload);
+		setResetClass("reset-button show");
+	}
 
-    let res = await fetch(`http://localhost:3001/portfolio/?keyword=${input}`);
-    let data = await res.json();
-    setPortfolio(data.payload);
-    setResetClass("reset-button show");
-  }
+	//when designer search done by user new api call completed
+	async function searchByDesigner(e) {
+		e.preventDefault();
+		const input = e.target.searchInput.value;
+		e.target.reset();
 
-  //when designer search done by user new api call completed
-  async function searchByDesigner(e) {
-    e.preventDefault();
-    const input = e.target.searchInput.value;
-    e.target.reset();
+		let res = await fetch(
+			`http://localhost:3001/portfolio/?designer=${input}`
+		);
+		let data = await res.json();
+		setPortfolio(data.payload);
+		setResetClass("reset-button show");
+	}
 
-    let res = await fetch(`http://localhost:3001/portfolio/?designer=${input}`);
-    let data = await res.json();
-    setPortfolio(data.payload);
-    setResetClass("reset-button show");
-  }
-
-  //when experience search done by user new api call completed
-  async function searchByExperience(e) {
-    e.preventDefault();
-    const input = e.target.value;
-    let res = await fetch(
-      `http://localhost:3001/portfolio/?experience=${input}`
-    );
-    let data = await res.json();
-    setPortfolio(data.payload);
-    setResetClass("reset-button show");
-  }
-  /*
+	//when experience search done by user new api call completed
+	async function searchByExperience(e) {
+		e.preventDefault();
+		const input = e.target.value;
+		let res = await fetch(
+			`http://localhost:3001/portfolio/?experience=${input}`
+		);
+		let data = await res.json();
+		setPortfolio(data.payload);
+		setResetClass("reset-button show");
+	}
+	/*
   function onClick(e) {
     e.preventDefault();
     setResetClass("reset-button");
     getData();
   }
   */
+
 
   // VISIBILITY OF SLIDE OUT MENU
   const [menuVis, setMenuVis] = useState({ visible: false });
@@ -125,6 +129,7 @@ function App() {
       <Footer />
     </div>
   );
+
 }
 
 export default App;

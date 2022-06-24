@@ -36,7 +36,7 @@ export default function Footer(){
 
          </div>
          <div className= "Text">
-           <p>Portfol.io </p>
+           <p>Portfol.io | Inspiration for everyone</p>
          </div>
         
    </div> 
