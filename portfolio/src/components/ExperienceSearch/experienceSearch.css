@@ -7,6 +7,9 @@
   color: #00B4CC;
   border-radius: calc(var(--f-size) / 5);
 	margin-bottom: 40px;
-	box-shadow: 6px 6px 20px 3px #5497a766;
-
+  padding-right: 5px;
+  box-shadow: 3px 3px 20px 1px #5497a766;
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
