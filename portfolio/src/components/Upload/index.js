@@ -22,7 +22,7 @@ Function for button:
 //     description: "second best one"
 
 // }
-function Upload() {
+function Upload({upload}) {
 	const [portfolio, setPortfolio] = useState({
 		designers_name: "",
 		site_url: "",
@@ -31,7 +31,7 @@ function Upload() {
 		experience_level: "",
 	});
 	//const [sentData, setSentData] = useState()
-
+	//console.log('upload ' + upload)
 	function eventHandleName(e) {
 		const name = e.target.value;
 		setPortfolio({
@@ -73,7 +73,7 @@ function Upload() {
 	function handleClick(e) {
 		e.preventDefault();
 		// console.log("clicked");
-		postData();
+		upload(portfolio);
 		e.target.reset();
 	}
 
@@ -94,17 +94,7 @@ function Upload() {
 	//   })
 	// }
 
-	async function postData() {
-		const db_url = "http://localhost:3001/portfolio";
-		const newPost = {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(portfolio),
-		};
-		const res = await fetch(db_url, newPost);
-		const data = await res.json();
-		console.log(data);
-	}
+	
 
 	return (
 		<div className="Upload">

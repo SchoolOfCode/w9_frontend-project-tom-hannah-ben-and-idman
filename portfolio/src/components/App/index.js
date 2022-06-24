@@ -70,53 +70,66 @@ function App() {
   }
   */
 
-	// VISIBILITY OF SLIDE OUT MENU
-	const [menuVis, setMenuVis] = useState({ visible: false });
 
-	function toggleMenu() {
-		console.log("toggle run");
-		setMenuVis({ visible: !menuVis.visible });
+  // VISIBILITY OF SLIDE OUT MENU
+  const [menuVis, setMenuVis] = useState({ visible: false });
+
+  function toggleMenu() {
+    console.log("toggle run");
+    setMenuVis({ visible: !menuVis.visible });
+  }
+
+  function menuOnClick() {
+    toggleMenu();
+    console.log("clicked");
+  }
+
+  //removes the search filters
+  function resetSearch(e) {
+    e.preventDefault();
+    setResetClass("reset-button");
+    const help = document.querySelector(".experience-search");
+    help.value = "initial";
+    getData();
+  }
+
+//upload data
+  async function postData(portfolio) {
+		const db_url = "http://localhost:3001/portfolio";
+		const newPost = {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(portfolio),
+		};
+		const res = await fetch(db_url, newPost);
+		//const data = await res.json();
+		//console.log(data);
+    getData();
 	}
 
-	function menuOnClick() {
-		toggleMenu();
-		console.log("clicked");
-	}
+  return (
+    <div className="App">
+      <Navbar menuOnClick={menuOnClick} />
+      <MenuContainer menuVis={menuVis} closeMenu={menuOnClick} upload = {postData}/>
+      <Header />
+      <div className="search-section">
+        <Search onSubmit={searchByKeyword} type="keyword" />
+        <Search onSubmit={searchByDesigner} type="Designer's Name" />
+        <ExperienceSearch onChange={searchByExperience} />
+        <button className={resetClass} onClick={resetSearch}>
+          Press to remove filter
+        </button>
+      </div>
 
-	//removes the search filters
-	function resetSearch(e) {
-		e.preventDefault();
-		setResetClass("reset-button");
-		const help = document.querySelector(".experience-search");
-		help.value = "initial";
-		getData();
-	}
+      <main>
+        <p></p>
+        <FolioList portfolio={portfolio} />
+      </main>
 
-	return (
-		<div className="App">
-			<Navbar menuOnClick={menuOnClick} />
-			<MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
-			<Header />
-			<div className="search-section">
-				<Search onSubmit={searchByKeyword} type="keyword" />
-				<Search
-					onSubmit={searchByDesigner}
-					type={`designer\u2019s name`}
-				/>
-				<ExperienceSearch onChange={searchByExperience} />
-				<button className={resetClass} onClick={resetSearch}>
-					Press to remove filter
-				</button>
-			</div>
+      <Footer />
+    </div>
+  );
 
-			<main>
-				<p></p>
-				<FolioList portfolio={portfolio} />
-			</main>
-
-			<Footer />
-		</div>
-	);
 }
 
 export default App;
