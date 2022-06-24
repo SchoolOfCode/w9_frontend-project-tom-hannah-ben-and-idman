@@ -89,10 +89,24 @@ function App() {
     getData();
   }
 
+//upload data
+  async function postData(portfolio) {
+		const db_url = "http://localhost:3001/portfolio";
+		const newPost = {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(portfolio),
+		};
+		const res = await fetch(db_url, newPost);
+		//const data = await res.json();
+		//console.log(data);
+    getData();
+	}
+
   return (
     <div className="App">
       <Navbar menuOnClick={menuOnClick} />
-      <MenuContainer menuVis={menuVis} closeMenu={menuOnClick} />
+      <MenuContainer menuVis={menuVis} closeMenu={menuOnClick} upload = {postData}/>
       <Header />
       <div className="search-section">
         <Search onSubmit={searchByKeyword} type="keyword" />

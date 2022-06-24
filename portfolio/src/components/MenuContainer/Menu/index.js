@@ -2,13 +2,13 @@ import "./menu.css";
 import Upload from "../../Upload";
 import { FaRegWindowClose } from "react-icons/fa";
 
-export default function Menu({ onClick, menuVis, closeMenu }) {
+export default function Menu({ onClick, menuVis, closeMenu, upload }) {
 	let visibility = "hide";
 
 	if (menuVis) {
 		visibility = "show";
 	}
-
+//console.log('menu ' + upload)
 	return (
 		<div id="sidebar" className={visibility}>
 			<div className="menu-close">
@@ -16,7 +16,7 @@ export default function Menu({ onClick, menuVis, closeMenu }) {
 					<FaRegWindowClose />
 				</span>
 			</div>
-			<Upload />
+			<Upload upload = {upload}/>
 		</div>
 	);
 }
