@@ -1,5 +1,4 @@
 import "./foliolist.css";
-import { useState } from "react";
 
 import Folio from "../Folio";
 

@@ -78,11 +78,6 @@ function App() {
 		setMenuVis({ visible: !menuVis.visible });
 	}
 
-	function menuOnClick() {
-		toggleMenu();
-		console.log("clicked");
-	}
-
 	//removes the search filters
 	function resetSearch(e) {
 		e.preventDefault();
@@ -108,10 +103,10 @@ function App() {
 
 	return (
 		<div className="App">
-			<Navbar menuOnClick={menuOnClick} />
+			<Navbar menuOnClick={toggleMenu} />
 			<MenuContainer
 				menuVis={menuVis}
-				closeMenu={menuOnClick}
+				closeMenu={toggleMenu}
 				upload={postData}
 			/>
 			<Header />

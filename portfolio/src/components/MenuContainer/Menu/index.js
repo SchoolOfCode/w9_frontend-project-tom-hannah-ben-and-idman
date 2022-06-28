@@ -2,7 +2,7 @@ import "./menu.css";
 import Upload from "../../Upload";
 import { FaRegWindowClose } from "react-icons/fa";
 
-export default function Menu({ onClick, menuVis, closeMenu, upload }) {
+export default function Menu({ menuVis, closeMenu, upload }) {
 	let visibility = "hide";
 
 	if (menuVis) {

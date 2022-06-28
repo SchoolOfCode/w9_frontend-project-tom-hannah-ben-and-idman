@@ -8,12 +8,6 @@ import { faTwitter, faFacebook, faInstagram, faPinterest, faFontAwesome } from '
 library.add(fas, faTwitter, faFacebook, faInstagram, faPinterest,faFontAwesome)
 
 
-
-
-
-
-
-
 export default function Footer(){
 
     return (
