@@ -87,6 +87,13 @@ Takes in the props:
 Creates a form to take in the data for a new portfolio and sends that data to the database on submit.
 Takes in the prop of 'upload' from the App index.js, passed down through the MenuContainer and Menu.
 
+## Authors
+
+- Ben Greenwood
+- Idman Abshir
+- Hannah McFarlane
+- Tom Birbeck
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
