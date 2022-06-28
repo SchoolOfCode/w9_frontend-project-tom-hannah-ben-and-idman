@@ -89,10 +89,10 @@ Takes in the prop of 'upload' from the App index.js, passed down through the Men
 
 ## Authors
 
-- Ben Greenwood
-- Idman Abshir
-- Hannah McFarlane
-- Tom Birbeck
+- [Ben Greenwood](https://github.com/B-P-Greenwood)
+- [Idman Abshir](https://github.com/idman01)
+- [Hannah McFarlane](https://twitter.com/hannahdoesacode)
+- [Tom Birbeck](https://github.com/TomBirbeck)
 
 # Getting Started with Create React App
 
