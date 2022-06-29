@@ -14,11 +14,23 @@ test(`search bar`, () => {
 
 
 test(`search bar button`, () => {
-    
     render(<Search />);
     expect(screen.getByRole(`button`)).toBeInTheDocument();
     });
 
+test(`search button works on click`, () => {
+    const onChange = jest.fn(e => e.preventDefault())
+    const type = "keyword"
+    render(<Search type = {type} onSubmit = {onChange} />);
+    fireEvent(screen.getByRole('button'),
+        new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+        }),
+      )
+    expect(onChange).toHaveBeenCalledTimes(1);
+
+})
 
 
 // test.only('search field', async () => {
