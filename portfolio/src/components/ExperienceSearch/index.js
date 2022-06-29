@@ -14,7 +14,7 @@ export default function ExperienceSearch({ onChange }) {
           <option value="initial" disabled hidden>
             Select option
           </option>
-          <option value="Beginner">Beginner</option>
+          <option data-testid = "Beginner" value="Beginner">Beginner</option>
           <option value="Mid-level">Mid-level</option>
           <option value="Experienced">Experienced</option>
         </select>
