@@ -14,8 +14,7 @@ test('Experience dropdown', () => {
     expect(screen.getByDisplayValue('Select option')).toBeInTheDocument();
 })
 test('Experience dropdown options', () => {
-    const OnChange = jest.fn(e => e.preventDefault())
-    render(<ExperienceSearch onChange={OnChange}/>);
+    render(<ExperienceSearch />);
     expect(screen.getByDisplayValue('Select option')).toBeInTheDocument();
     fireEvent.click(screen.getByText('Mid-level'))
     expect(screen.getByText('Mid-level')).toBeInTheDocument();
@@ -24,7 +23,9 @@ test('Experience dropdown options', () => {
 test.only('Experience dropdown options when clicked', () => {
     const OnChange = jest.fn(e => e.preventDefault())
     render(<ExperienceSearch onChange={OnChange}/>);
-    expect(screen.getByDisplayValue('Select option')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('Mid-level'))
-    expect(screen.getByText('Mid-level')).toBeInTheDocument();
+    const clicked = screen.getByDisplayValue('Select option')
+    //console.log(clicked)
+    //console.log(clicked.children[1])
+    fireEvent.change(clicked, {target: {value: 'Beginner'}})
+    expect(OnChange).toHaveBeenCalledTimes(1);
 })
